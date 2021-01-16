@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D5E2E3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Homepage"
+            android:textColor="#417577"
+            android:textSize="40dp"/>
+
+        <Button
+            android:id="@+id/view_all_posts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_teal"
+            android:padding="8dp"
+            android:text="View All Posts"
+            android:textColor="#D5E2E3"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/my_posts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_teal"
+            android:padding="8dp"
+            android:text="My Posts"
+            android:textColor="#D5E2E3"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/profile_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_teal"
+            android:padding="8dp"
+            android:text="Profile"
+            android:textColor="#D5E2E3"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_purple"
+            android:padding="8dp"
+            android:text="Make New Post"
+            android:textColor="#E8DFEA"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_teal"
+            android:padding="8dp"
+            android:text="Sign Out"
+            android:textColor="#D5E2E3"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
