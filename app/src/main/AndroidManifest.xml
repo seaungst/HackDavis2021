@@ -14,7 +14,10 @@
         <activity android:name=".ForumPage" />
         <activity android:name=".HomepageActivity" />
         <activity android:name=".SignupActivity" />
+        <activity android:name=".MessagingActivity"/>
+        <activity android:name=".ChatRoomActivity"/>
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
