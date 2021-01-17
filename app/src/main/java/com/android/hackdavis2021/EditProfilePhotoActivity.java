@@ -118,7 +118,6 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
         else {
             Toast.makeText(this, "Profile photo change error.",
                     Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -158,10 +157,12 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
                     }
                 }
             });
+            progressDialog.dismiss();
         }
         else {
             progressDialog.dismiss();
             Toast.makeText(this, "Image not selected.", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
     }
 }
