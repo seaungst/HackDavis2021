@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.hackdavis2021.UserData.Message;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button signoutButton, profileButton;
+    private Button postButton, signoutButton, profileButton;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -30,6 +31,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        postButton = findViewById(R.id.post_button);
+        postButton.setOnClickListener(this);
 
         signoutButton = findViewById(R.id.sign_out_button);
         signoutButton.setOnClickListener(this);
@@ -65,8 +69,14 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(@NonNull View v) {
         switch (v.getId()) {
+            case R.id.post_button:
+                Toast.makeText(HomepageActivity.this, "Time to Talk!",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomepageActivity.this,
+                        ForumPage.class));
+                break;
             case R.id.sign_out_button:
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(HomepageActivity.this, "Signed out successfully!",

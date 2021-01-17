@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_forumpage">
+    tools:context=".ForumPage"
+    tools:ignore="ExtraText">
+
+//pretty stuff  (start)
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cloud_background"
+        android:alpha="0.5"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messageRV"
@@ -28,35 +39,42 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:orientation="horizontal"
+        android:background="#417577"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+//pretty stuff (end)
 
     <EditText
-        android:id="@+id/messageET"
+        android:id="@+id/userInput"
+        android:inputType="text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="#E8DFEA"
-        android:hint="Enter a Message!"
+        android:background="#E8DCD3"
+        android:hint="@string/enter_a_message"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <ImageButton
+
+    <Button
         android:id="@+id/sendBTN"
-        android:layout_width="62dp"
-        android:layout_height="0dp"
+        android:text="@string/arrow"
+        android:textSize="32sp"
+        android:textColor="#417577"
+        android:layout_width="74dp"
+        android:layout_height="59dp"
         android:layout_marginBottom="1dp"
         android:background="#f8bab3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/relativeLayout2"
         app:layout_constraintTop_toBottomOf="@+id/messageRV"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:layout_constraintVertical_bias="1.0"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
