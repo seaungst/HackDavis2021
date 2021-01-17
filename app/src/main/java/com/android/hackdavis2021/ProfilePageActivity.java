@@ -48,7 +48,7 @@ public class ProfilePageActivity extends AppCompatActivity implements View.OnCli
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
 
         userId = user.getUid();
         mAuth = FirebaseAuth.getInstance();

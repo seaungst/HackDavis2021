@@ -58,7 +58,7 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
         choosePhotoButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
         storageProfilePicsRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
         profilePageIcon = findViewById(R.id.edit_profile_page_icon);
@@ -157,12 +157,10 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
                     }
                 }
             });
-            progressDialog.dismiss();
         }
         else {
             progressDialog.dismiss();
             Toast.makeText(this, "Image not selected.", Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
         }
     }
 }
