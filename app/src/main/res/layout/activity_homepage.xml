@@ -7,11 +7,6 @@
     android:orientation="vertical"
     tools:context=".HomepageActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#D5E2E3">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +26,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
+                    app:civ_border_width="5dp"
+                    app:civ_border_color="#417577"
                     android:contentDescription="Profile Image"
                     android:src="@drawable/cloud_background" />
 
@@ -73,15 +70,6 @@
                 android:textColor="#E8DFEA"/>
 
             <Button
-                android:id="@+id/view_all_posts_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_button_teal"
-                android:text="View All Posts"
-                android:textColor="#D5E2E3" />
-
-            <Button
                 android:id="@+id/chatroom_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,18 +94,18 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Recent Posts:"
+                android:text="Your Most Recent Post:"
                 android:textColor="#417577"
                 android:textAlignment="center" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/my_posts_button"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_margin="10dp">
 
                 <RelativeLayout
@@ -154,8 +142,32 @@
 
             </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-    </ScrollView>
+                <Button
+                    android:id="@+id/view_all_posts_button"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button_teal"
+                    android:text="All Posts"
+                    android:textColor="#D5E2E3" />
+
+                <Button
+                    android:id="@+id/view_my_posts_button"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_button_teal"
+                    android:text="My Posts"
+                    android:textColor="#D5E2E3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 </LinearLayout>

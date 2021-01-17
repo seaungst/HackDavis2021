@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     tools:context=".ProfilePageActivity">
 
@@ -18,7 +19,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,21 +28,34 @@
             android:padding="10dp"
             android:text="Profile"
             android:textColor="#417577"
-            android:textSize="40dp"/>
+            android:textSize="30dp"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_page_icon"
             android:layout_width="100dp"
             android:layout_height="100dp"
-
+            app:civ_border_width="5dp"
+            app:civ_border_color="#417577"
             android:contentDescription="Profile Image"
             android:src="@drawable/cloud_background" />
+
+        <Button
+            android:id="@+id/edit_profile_photo"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button_teal"
+            android:padding="8dp"
+            android:text="Edit Icon"
+            android:textColor="#D5E2E3"
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -57,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#9E67B0"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
 
             <TextView
                 android:id="@+id/profile_username_title"
@@ -73,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#9E67B0"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
 
             <TextView
                 android:id="@+id/profile_email_title"
@@ -89,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#9E67B0"
-                android:textSize="25dp"/>
+                android:textSize="20dp"/>
 
         </LinearLayout>
 

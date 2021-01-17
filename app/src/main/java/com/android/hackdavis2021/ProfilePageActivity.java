@@ -17,14 +17,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfilePageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button changePasswordButton, backButton;
+    private Button changePasswordButton, backButton, editProfilePhotoButton;
 
+    private CircleImageView profilePageIcon;
     private FirebaseUser user;
-    private DatabaseReference reference;
+    private DatabaseReference reference, databaseReference;
     private String userId;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +43,17 @@ public class ProfilePageActivity extends AppCompatActivity implements View.OnCli
         backButton = (Button) findViewById(R.id.profile_back_button);
         backButton.setOnClickListener(this);
 
+        editProfilePhotoButton = (Button) findViewById(R.id.edit_profile_photo);
+        editProfilePhotoButton.setOnClickListener(this);
+
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+
         userId = user.getUid();
+        mAuth = FirebaseAuth.getInstance();
+
+        profilePageIcon = findViewById(R.id.profile_page_icon);
 
         final TextView nameTextView = (TextView) findViewById(R.id.profile_name);
         final TextView usernameTextView = (TextView) findViewById(R.id.profile_username);
@@ -68,6 +82,28 @@ public class ProfilePageActivity extends AppCompatActivity implements View.OnCli
             }
         });
 
+        getUserInfo();
+    }
+
+    private void getUserInfo() {
+        databaseReference.child(mAuth.getCurrentUser().getUid())
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                            if (snapshot.hasChild("image")) {
+                                String image = snapshot.child("image").getValue().toString();
+                                Picasso.get().load(image).into(profilePageIcon);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(ProfilePageActivity.this,
+                                "An error has occurred.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
@@ -81,6 +117,10 @@ public class ProfilePageActivity extends AppCompatActivity implements View.OnCli
             case R.id.profile_back_button:
                 startActivity(new Intent(ProfilePageActivity.this,
                         HomepageActivity.class));
+                break;
+            case R.id.edit_profile_photo:
+                startActivity(new Intent(ProfilePageActivity.this,
+                        EditProfilePhotoActivity.class));
                 break;
         }
     }
