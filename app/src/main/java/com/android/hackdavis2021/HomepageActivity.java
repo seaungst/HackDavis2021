@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,7 +27,10 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_out_button:
-                startActivity(new Intent(this, LoginActivity.class));
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(HomepageActivity.this, "Signed out successfully!",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomepageActivity.this, LoginActivity.class));
                 break;
         }
     }
