@@ -29,6 +29,14 @@
             android:textColor="#417577"
             android:textSize="40dp"/>
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_page_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:contentDescription="Profile Image"
+            android:src="@drawable/cloud_background" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
