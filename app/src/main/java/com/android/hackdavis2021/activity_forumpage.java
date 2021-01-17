@@ -1,4 +1,4 @@
-
+/*
 package com.android.hackdavis2021;
 
 import androidx.annotation.NonNull;
@@ -19,7 +19,7 @@ import android.webkit.WebView;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.android.hackdavis2021.User.AllMethods
+import com.android.hackdavis2021.User.AllMethods;
 import com.android.hackdavis2021.Adapters.MessageAdapter;
 import com.android.hackdavis2021.User.Message;
 import com.android.hackdavis2021.User;
@@ -183,3 +183,4 @@ public class activity_forumpage extends AppCompatActivity implements View.OnClic
     }
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.android.hackdavis2021.Adapters;
 
 import android.os.Message;
@@ -39,3 +40,4 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageA
     }
 
 }
+ */
