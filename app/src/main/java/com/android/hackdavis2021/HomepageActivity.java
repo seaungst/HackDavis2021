@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button postButton, signoutButton, profileButton;
+    private Button postButton, signoutButton, profileButton, chatroomButton;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -40,6 +40,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
 
         profileButton = findViewById(R.id.profile_button);
         profileButton.setOnClickListener(this);
+
+        chatroomButton = findViewById(R.id.chatroom_button);
+        chatroomButton.setOnClickListener(this);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -88,6 +91,10 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(HomepageActivity.this,
                         ProfilePageActivity.class));
                  break;
+
+            case R.id.chatroom_button:
+                startActivity(new Intent(HomepageActivity.this, ChatRoomActivity.class));
+                break;
         }
     }
 }
