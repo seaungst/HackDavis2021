@@ -19,7 +19,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="230dp"
                 android:background="#A0CCCD"
                 android:padding="20dp">
 
@@ -42,21 +42,21 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="130dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="115dp"
                     android:layout_marginEnd="130dp"
-                    android:layout_marginBottom="60dp"
+                    android:layout_marginBottom="40dp"
                     android:background="@drawable/rounded_button_teal"
                     android:text="Profile"
                     android:textColor="#D5E2E3" />
 
                 <TextView
-                    android:id="@+id/fullName"
+                    android:id="@+id/homepage_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/profile_image"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="50dp"
-                    android:text="Name"
+                    android:text="Welcome!"
                     android:textColor="#417577"
                     android:textSize="20sp" />
 

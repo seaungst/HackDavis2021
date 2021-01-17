@@ -55,6 +55,7 @@
                 android:id="@+id/profile_username_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:textColor="#417577"
                 android:textSize="25dp"
                 android:text="Username: "/>
@@ -70,6 +71,7 @@
                 android:id="@+id/profile_email_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:textColor="#417577"
                 android:textSize="25dp"
                 android:text="Email: "/>
