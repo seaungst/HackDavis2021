@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button signoutButton;
+    private Button signoutButton, profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,9 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
 
         signoutButton = findViewById(R.id.sign_out_button);
         signoutButton.setOnClickListener(this);
+
+        profileButton = findViewById(R.id.profile_button);
+        profileButton.setOnClickListener(this);
     }
 
     @Override
@@ -32,6 +35,11 @@ public class HomepageActivity extends AppCompatActivity implements View.OnClickL
                         Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(HomepageActivity.this, LoginActivity.class));
                 break;
+
+            case R.id.profile_button:
+                startActivity(new Intent(HomepageActivity.this,
+                        ProfilePageActivity.class));
+                 break;
         }
     }
 }
