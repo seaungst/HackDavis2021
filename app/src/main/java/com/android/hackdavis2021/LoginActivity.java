@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button signupHereButton, loginButton;
+    private Button signupHereButton, loginButton, forgotPasswordButton;
     private EditText editTextEmail, editTextPassword;
 
     private FirebaseAuth mAuth;
@@ -33,6 +33,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
+
+        forgotPasswordButton = (Button) findViewById(R.id.forgot_password_button);
+        forgotPasswordButton.setOnClickListener(this);
 
         editTextEmail = (EditText) findViewById(R.id.login_email);
         editTextPassword = (EditText) findViewById(R.id.login_password);
@@ -50,6 +53,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_button:
                 userLogin();
                 break;
+
+            case R.id.forgot_password_button:
+                startActivity(new Intent(this, ForgotPasswordActivity.class));
+                break;
         }
     }
 
@@ -58,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String password = editTextPassword.getText().toString().trim();
 
         if(email.isEmpty()){
-            editTextEmail.setError("Please enter a username.");
+            editTextEmail.setError("Please enter an email.");
             editTextEmail.requestFocus();
             return;
         }
@@ -80,6 +87,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login successful!",
+                            Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this,
                             HomepageActivity.class));
                 }

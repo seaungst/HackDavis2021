@@ -30,10 +30,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         mAuth = FirebaseAuth.getInstance();
 
-        backButtonSignup = findViewById(R.id.signup_back_button);
+        backButtonSignup = (Button) findViewById(R.id.signup_back_button);
         backButtonSignup.setOnClickListener(this);
 
-        signupButton = findViewById(R.id.signup_button);
+        signupButton = (Button) findViewById(R.id.signup_button);
         signupButton.setOnClickListener(this);
 
         editTextName = (EditText) findViewById(R.id.signup_name);
