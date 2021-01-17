@@ -29,6 +29,17 @@
             android:textColor="#417577"
             android:textSize="40dp"/>
 
+        <EditText
+            android:id="@+id/signup_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:hint="Full Name"
+            android:padding="8dp"
+            android:drawableLeft="@drawable/name_icon"
+            android:textColor="#417577"
+            android:textSize="25dp" />
 
         <EditText
             android:id="@+id/signup_username"
@@ -39,6 +50,18 @@
             android:hint="Username"
             android:padding="8dp"
             android:drawableLeft="@drawable/user_icon"
+            android:textColor="#417577"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:hint="Email"
+            android:padding="8dp"
+            android:drawableLeft="@drawable/email_icon"
             android:textColor="#417577"
             android:textSize="25dp" />
 

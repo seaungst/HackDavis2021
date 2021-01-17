@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HomepageActivity extends AppCompatActivity {
+public class HomepageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button signoutButton;
 
@@ -17,13 +17,15 @@ public class HomepageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         signoutButton = findViewById(R.id.sign_out_button);
-        signoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                Intent loginIntent = new Intent(view.getContext(), LoginActivity.class);
-                startActivity(loginIntent);
-            }
-        });
+        signoutButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.sign_out_button:
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+        }
     }
 }
