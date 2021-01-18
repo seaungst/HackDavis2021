@@ -138,6 +138,11 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
                     if (task.isSuccessful()) {
                         throw task.getException();
                     }
+                    else {
+                        Toast.makeText(EditProfilePhotoActivity.this,
+                                "Initial profile photo selection error.",
+                                Toast.LENGTH_SHORT).show();
+                    }
                     return fileRef.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -154,6 +159,10 @@ public class EditProfilePhotoActivity extends AppCompatActivity implements View.
                                 .updateChildren(userMap);
 
                         progressDialog.dismiss();
+                    }
+                    else {
+                        Toast.makeText(EditProfilePhotoActivity.this,
+                                "Profile photo selection error.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
